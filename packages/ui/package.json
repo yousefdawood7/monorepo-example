@@ -1,0 +1,31 @@
+{
+  "name": "@repo/ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "exports": {
+    "./components/*": {
+      "types": "./src/components/*.tsx",
+      "import": "./dist/components/*.js"
+    }
+  },
+  "imports": {
+    "#components/*": {
+      "types": "./src/components/*.tsx",
+      "import": "./dist/components/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}
