@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: checkout code
-        uses: "actions/checkout@6"
+        uses: "actions/checkout@v7"
       - name: setup pnpm and pnpm cache
         uses: pnpm/setup@v1
         with:
