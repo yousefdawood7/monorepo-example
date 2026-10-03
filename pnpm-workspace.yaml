@@ -2,6 +2,11 @@ packages:
   - apps/*
   - packages/*
 
+allowBuilds:
+  gitleaks-secret-scanner: true
+  sharp: false
+  unrs-resolver: false
+
 catalog:
   react: ^19.3.0
   react-dom: ^19.3.0
