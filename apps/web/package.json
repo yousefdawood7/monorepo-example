@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@repo/ui": "workspace:*",
+    "cn": "^0.4.0",
     "react": "catalog:",
-    "react-dom": "catalog:",
-    "@repo/ui": "workspace:*"
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",

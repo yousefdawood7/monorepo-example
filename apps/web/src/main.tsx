@@ -1,9 +1,10 @@
-import Container from "@repo/ui/components/container";
+import { Button } from "@repo/ui/components/button";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "@repo/ui/globals.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Container />
+    <Button>Yousef Dawood</Button>
   </StrictMode>,
 );
