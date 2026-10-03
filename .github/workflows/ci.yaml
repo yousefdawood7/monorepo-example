@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout code
+        uses: "actions/checkout@7"
+      - name: setup pnpm and pnpm cache
+        uses: pnpm/setup@v1
+        with:
+          runtime: node@22
+          cache: true
+
+      - name: setup dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: lint the project
+        run: pnpm lint
+
+      - name: build project
+        run: pnpm build
