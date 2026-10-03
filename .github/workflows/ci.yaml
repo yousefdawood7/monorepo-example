@@ -1,0 +1,32 @@
+name: build and lint monorepo project
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-monorepo-project:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: repo checkout
+        uses: actions/checkout@v7
+
+      - name: setup node and pnpm cache
+        uses: pnpm/setup@v1
+        with:
+          runtime: node@22
+          cache: true
+
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: build project
+        run: pnpm build
+
+      - name: lint project
+        run: pnpm lint

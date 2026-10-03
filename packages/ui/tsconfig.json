@@ -3,7 +3,9 @@
   "compilerOptions": {
     "paths": {
       "@repo/ui/*": ["./src/*"]
-    }
+    },
+    "module": "esnext",
+    "moduleResolution": "bundler"
   },
   "include": ["."],
   "exclude": ["node_modules", "dist"]
