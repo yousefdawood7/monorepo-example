@@ -3,9 +3,7 @@ packages:
   - packages/*
 
 allowBuilds:
-  gitleaks-secret-scanner: true
-  sharp: false
-  unrs-resolver: false
+  unrs-resolver: true
 
 catalog:
   react: ^19.3.0

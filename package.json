@@ -1,33 +1,19 @@
 {
   "name": "root-repo",
   "version": "1.0.0",
-  "type": "module",
-  "lint-staged": {
-    "**/*.{tsx,ts,jsx,js}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
   "scripts": {
     "dev": "turbo dev",
-    "lint": "turbo lint",
     "build": "turbo build",
-    "prepare": "husky"
+    "lint": "turbo lint"
   },
+  "type": "module",
   "devDependencies": {
-    "@commitlint/cli": "^21.2.3",
-    "@commitlint/config-conventional": "^21.2.3",
-    "eslint": "^10.11.0",
-    "gitleaks-secret-scanner": "^2.1.1",
-    "husky": "^9.1.7",
-    "lint-staged": "^17.6.0",
-    "prettier": "^3.9.9",
-    "turbo": "^2.11.6"
+    "turbo": "^2.11.7"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.5.2",
+      "version": "11.5.2",
       "onFail": "download"
     }
   }

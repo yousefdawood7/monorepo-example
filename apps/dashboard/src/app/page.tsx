@@ -1,5 +1,5 @@
-import { Button } from "@repo/ui/components/button";
+import Hello from "@repo/ui/components/hello";
 
 export default function Home() {
-  return <Button>Yousef</Button>;
+  return <Hello />;
 }
