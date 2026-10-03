@@ -13,7 +13,7 @@ jobs:
     environment: production
 
     env:
-      TURBO_SECRET: ${{ secrets.TURBO_SECRET }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
     runs-on: ubuntu-22.04
