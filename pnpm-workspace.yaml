@@ -4,6 +4,7 @@ packages:
 
 allowBuilds:
   unrs-resolver: true
+  sharp: false
 
 catalog:
   react: ^19.3.0
