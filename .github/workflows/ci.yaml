@@ -8,9 +8,9 @@ on:
     branches:
       - master
   workflow_dispatch:
-env: 
+env:
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  TURBO_TEAM:  ${{ vars.TURBO_TEAM }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
 jobs:
   build-monorepo-project:
@@ -24,10 +24,6 @@ jobs:
         with:
           runtime: node@22
           cache: true
-
-      - name: install dependencies
-        run: pnpm install --frozen-lockfile
-
       - name: build project
         run: pnpm build
 
