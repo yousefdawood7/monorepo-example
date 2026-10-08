@@ -4,6 +4,8 @@ on:
   push:
     branches: [master]
 
+  workflow_dispatch:
+
 jobs:
   deploy-project:
     runs-on: ubuntu-22.04
@@ -32,6 +34,8 @@ jobs:
 
       - name: Install Vercel CLI
         run: pnpm install --global vercel@latest
+      - name: Approve scripts
+        run: pnpm approve-builds --all
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
