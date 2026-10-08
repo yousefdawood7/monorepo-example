@@ -8,3 +8,4 @@ createRoot(document.getElementById("root")!).render(
     <Button>Yousef Dawood</Button>
   </StrictMode>,
 );
+const x = 2
