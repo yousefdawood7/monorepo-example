@@ -24,6 +24,10 @@ jobs:
         with:
           runtime: node@22
           cache: true
+
+      - name install deps
+        run: pnpm i --frozen-lockfile
+        
       - name: build project
         run: pnpm build
 
