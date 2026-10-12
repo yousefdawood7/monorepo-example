@@ -13,7 +13,8 @@
     "@repo/ui": "workspace:*",
     "cn": "^0.4.0",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "swr": "^2.5.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

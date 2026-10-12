@@ -11,4 +11,14 @@ export default defineConfig({
       "@": resolve(import.meta.dirname, "./src"),
     },
   },
+
+  server:{ 
+    proxy:  {
+        '/api': {
+           target: 'https://stunning-orbit-gpr75pxwrrqc954p-5000.app.github.dev',
+           rewrite: (path) => path.replace('/api', '')
+        }
+    }
+  }
 });
+
