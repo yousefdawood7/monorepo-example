@@ -1,6 +1,6 @@
 import useSWR from 'swr'
+import { fetcher } from './utils/fetcher'
 
-export const fetcher = <T extends string>(endpoint: T) => fetch(endpoint).then(res => res.json())
 
 export default function App () {
     const {data, isLoading} = useSWR('/api/users', fetcher)

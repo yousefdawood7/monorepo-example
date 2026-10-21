@@ -63,5 +63,5 @@ jobs:
         with:
           push: true
           tags: yousefdawood7/monorepo-${{ matrix.apps.name }}:latest
-          file: ./apps/${{matrix.apps.name}}
+          file: ./apps/${{matrix.apps.name}}/Dockerfile
           
