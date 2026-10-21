@@ -17,6 +17,14 @@ COPY --from=builder /app/out/json .
 RUN pnpm i
 
 COPY --from=builder /app/out/full .
+
+
+ARG TURBO_TEAM
+ENV TURBO_TEAM=$TURBO_TEAM
+
+ARG TURBO_TOKEN
+ENV TURBO_TOKEN=$TURBO_TOKEN
+
 RUN turbo build
 
 CMD [ "pnpm", "start" ]

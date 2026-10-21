@@ -23,6 +23,8 @@ jobs:
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets[matrix.apps.secret] }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
     steps:
       - name: code checkout
@@ -64,4 +66,6 @@ jobs:
           push: true
           tags: yousefdawood7/monorepo-${{ matrix.apps.name }}:latest
           file: ./apps/${{matrix.apps.name}}/Dockerfile
-          
+          build-args: |
+            TURBO_TEAM=${{ secrets.TURBO_TEAM }}
+            TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
