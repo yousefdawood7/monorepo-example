@@ -15,8 +15,6 @@ jobs:
       matrix:
         apps:
           [
-            { name: "web", secret: "PROJECT_WEB_ID" },
-            { name: "dashboard", secret: "PROJECT_DASHBOARD_ID" },
             { name: "api", secret: "PROJECT_API_ID" },
           ]
 
