@@ -67,5 +67,5 @@ jobs:
           tags: yousefdawood7/monorepo-${{ matrix.apps.name }}:latest
           file: ./apps/${{matrix.apps.name}}/Dockerfile
           build-args: |
-            TURBO_TEAM=${{ secrets.TURBO_TEAM }}
+            TURBO_TEAM=${{ vars.TURBO_TEAM }}
             TURBO_TOKEN=${{ secrets.TURBO_TOKEN }}
