@@ -17,6 +17,7 @@ jobs:
           [
             { name: "web", secret: "PROJECT_WEB_ID" },
             { name: "dashboard", secret: "PROJECT_DASHBOARD_ID" },
+            { name: "api", secret: "PROJECT_API_ID" },
           ]
 
     env:
@@ -46,3 +47,21 @@ jobs:
 
       - name: Deploy Project Artifacts to Vercel ${{matrix.apps.name}}
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      -
+        name: Build and push
+        uses: docker/build-push-action@v7
+        with:
+          push: true
+          tags: yousefdawood7/monorepo-${{ matrix.apps.name }}:latest
+          file: ./apps/${{matrix.apps.name}}
+          
